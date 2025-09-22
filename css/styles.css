@@ -1,12 +1,13 @@
 /* Base Styles */
 :root {
-    --primary-color: #000000;
-    --secondary-color: #ff0000;
-    --text-color: #ffffff;
-    --heading-color: #ffffff;
-    --background-color: #000000;
-    --card-background: #1a1a1a;
-    --border-color: #333333;
+    --primary-color: #00C26F;
+    --secondary-color: #00A35C;
+    --text-color: #E0E0E0;
+    --heading-color: #FFFFFF;
+    --background-color: #121212; /* Alterado de #1A1A1A para um tom mais escuro e neutro */
+    --card-background: #003D20; /* Ajustado para um verde mais escuro e sutil */
+    --border-color: #00522B; /* Ajustado para um verde mais escuro e sutil */
+    --border-color: #006633;
 }
 
 * {
@@ -63,6 +64,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .profile-content h1 {
@@ -91,10 +93,12 @@ header {
     gap: 8px;
 }
 
-.contact-info a {
+.contact-info a,
+.contact-info span {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--secondary-color);
 }
 
 /* Section Styles */
