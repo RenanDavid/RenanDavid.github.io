@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,64 +9,338 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <div class="profile">
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">RD.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#recommendations">Testimonials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container header-content">
+            <div class="profile-image-container">
                 <div class="profile-image">
-                    <img src="img/PerfilRenan.jpg" alt="Renan David">
+                    <video id="profileVideo" src="img/roborenan.mp4" poster="img/PerfilRenan.jpg" muted playsinline
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></video>
                 </div>
-                <div class="profile-content">
-                    <h1>Renan David Antunes Moreira</h1>
-                    <h2>Full Stack Developer</h2>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Curitiba, PR, Brazil</span>
-                    </div>
-                    <div class="contact-info">
-                        <span><i class="fas fa-envelope"></i> pro.alfayank@gmail.com</span>
-                        <span><i class="fas fa-phone"></i> +55 41 99890-6896</span>
-                        <a href="https://linkedin.com/in/renandavidantunesmoreira" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/renandavidantunesmoreira</a>
-                    </div>
+            </div>
+            <div class="profile-text">
+                <h1>Renan David Antunes Moreira</h1>
+                <h2>System Analyst & Full Stack Developer</h2>
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Curitiba, Brazil</span>
+                </div>
+                <div class="header-contact">
+                    <a href="mailto:pro.alfayank@gmail.com" class="contact-pill"><i class="fas fa-envelope"></i>
+                        pro.alfayank@gmail.com</a>
+                    <a href="https://wa.me/5541998906896" target="_blank" class="contact-pill"><i
+                            class="fas fa-phone"></i> +55 (41) 9
+                        9890-6896</a>
+                    <a href="https://linkedin.com/in/renandavidantunesmoreira" target="_blank" class="contact-pill"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="about" class="section">
+        <section id="experience" class="section">
             <div class="container">
-                <h2 class="section-title">Profile</h2>
-                <p>Self-taught and goal-driven full-stack developer skilled in React, Angular, Python, and PHP. Experienced in building scalable web and mobile applications for clients like Roche and Johnson & Johnson. Proficient in AI/ML API integration, workflow automation, and DevOps. Fluent in Portuguese, English, and Spanish, with a focus on agile collaboration and innovation.</p>
+                <h2 class="section-title">Professional Experience</h2>
+                <style>
+                    .period-badge {
+                        display: inline-block;
+                        padding: 4px 12px;
+                        background: rgba(255, 255, 255, 0.05);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 20px;
+                        font-size: 0.85rem;
+                        color: var(--brand-secondary);
+                        margin-bottom: 12px;
+                        font-weight: 500;
+                    }
+                </style>
+                <div class="timeline">
+                    <!-- Main Role -->
+                    <div class="timeline-item main-role">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="role-header">
+                                <h3>System Analyst</h3>
+                                <span class="company-tag">Tata Consultancy Services (TCS)</span>
+                                <span class="period">06/2021 – Present</span>
+                            </div>
+                            <p class="role-description">
+                                Working at one of the world's largest IT consultancies (TCS, Tata Group) with over 500k
+                                consultants globally.
+                                Professional growth through diverse clients and challenging projects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Project: Roche Flex Team (2021) -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="period-badge">2021</div>
+                            <h4>Roche – Flex Team</h4>
+                            <p class="project-summary">Worked in a flexible team managing over 16 internal technologies.
+                                Provided ticket support and incident management for various site operations.</p>
+                            <ul class="achievements">
+                                <li>Gained deep understanding of business rules and process workflows using Nintex +
+                                    SharePoint.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>Nintex Workflows</span>
+                                <span>SharePoint</span>
+                                <span>Ticket Support</span>
+                                <span>HTML/CSS/JS</span>
+                                <span>Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: JNJ Sales Academy (2021 - 2022) -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="period-badge">2021 – 2022</div>
+                            <h4>Johnson & Johnson – Sales Academy</h4>
+                            <p class="project-summary">Creation of an internal SharePoint site to train and guide the
+                                Salesforce team. Worked closely with the client daily.</p>
+                            <ul class="achievements">
+                                <li>Successfully led ~70% of the project solo during a challenging period.</li>
+                                <li>Delivered a project that became an internal benchmark for SharePoint approaches
+                                    within J&J.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>SharePoint Online</span>
+                                <span>HTML/CSS/JS</span>
+                                <span>Internal Plugins</span>
+                                <span>Confluence</span>
+                                <span>Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: JNJ Digital Team (2022 - 2023) -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="period-badge">2022 – 2023</div>
+                            <h4>Johnson & Johnson – Digital Team</h4>
+                            <p class="project-summary">Support, creation, and management of JNJ Latin America websites.
+                                End-to-end involvement in digital presence for brands like Listerine, Johnson’s Baby,
+                                and Acuvue.</p>
+                            <ul class="achievements">
+                                <li>Participated in the implementation of the DevOps process from scratch.</li>
+                                <li>Managed the end-to-end process of website creation and conception.</li>
+                                <li>Provided technical support and maintenance for active JNJ Consumer applications and
+                                    legacy systems.</li>
+                                <li>Executed regional site rollouts and localization, expanding brand presence from
+                                    Brazil to other LATAM regions (e.g., Listerine Mexico).</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>Drupal 7</span>
+                                <span>PHP</span>
+                                <span>HTML/SASS</span>
+                                <span>Git</span>
+                                <span>Jenkins</span>
+                                <span>Jira</span>
+                                <span>Agile</span>
+                            </div>
+                            <div class="project-links">
+                                <span>Examples managed:</span>
+                                <a href="https://www.listerine.com.br/" target="_blank">Listerine</a>
+                                <a href="https://www.johnsonsbaby.com.br/" target="_blank">Johnson's Baby</a>
+                                <a href="https://www.neostrata.com.br/" target="_blank">Neostrata</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Roche Apps Team (2023 - 2024) -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="period-badge">2023 – 2024</div>
+                            <h4>Roche – Apps Team / Commercial Excellence</h4>
+                            <p class="project-summary">Returned to the Roche project as a Junior Developer focusing on
+                                OutSystems for internal technology migration.</p>
+                            <ul class="achievements">
+                                <li>Developed 10+ applications for internal medication management and labor operations.
+                                </li>
+                                <li>Active role in refining agile methodologies.</li>
+                                <li>Improved documentation for multiple platforms.</li>
+                                <li>Applied skills in JavaScript, Python, HTML, and CSS for migration tasks.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>OutSystems</span>
+                                <span>JavaScript</span>
+                                <span>Google Scripts</span>
+                                <span>Python</span>
+                                <span>Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Siemens ITGC SAP Audit (2024 - 2025) -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="period-badge">2024 – 2025</div>
+                            <h4>Siemens – ITGC SAP Audit</h4>
+                            <p class="project-summary">Support in the assessment of IT General Controls (ITGC) over
+                                the
+                                SAP landscape, working side-by-side with audit and internal teams to map risks and
+                                test controls.</p>
+                            <ul class="achievements">
+                                <li>Participated in the end-to-end ITGC audit process covering Access Management,
+                                    Change
+                                    Management, and IT Operations.</li>
+                                <li>Mapped critical processes and helped build the ITGC control matrix and RACI
+                                    using a
+                                    risk-based approach.</li>
+                                <li>Executed control testing through walkthroughs, evidence reviews, and log
+                                    analysis
+                                    (user access, job schedules, backups).</li>
+                                <li>Analyzed SAP and infrastructure data using Excel (pivot tables, cross-checks) to
+                                    validate audit trails and access inconsistencies.</li>
+                                <li>Documented findings and supported the creation of action plans for remediation.
+                                </li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>SAP</span>
+                                <span>ITGC Audit</span>
+                                <span>Excel (Advanced)</span>
+                                <span>Risk Assessment</span>
+                                <span>Change Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Innomotics (2025) -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <div class="period-badge">2025</div>
+                            <h4>Innomotics – Power Platform Factory</h4>
+                            <p class="project-summary">Development and support of low-code factory applications on
+                                Microsoft Power Platform (Power Apps, Power Automate, SharePoint Online) for Innomotics
+                                manufacturing operations, replacing spreadsheet- and email-based workflows with
+                                structured, auditable processes.</p>
+                            <ul class="achievements">
+                                <li>Acting as a technical focal point for factory digital tools, supporting users from
+                                    engineering, production, planning, and controlling.</li>
+                                <li>Translating shop-floor and back-office requirements into application features:
+                                    mapping processes, standardizing records and statuses, defining business rules, and
+                                    ensuring adherence to real factory workflows.</li>
+                                <li>Designing and maintaining SharePoint data models and Power Apps interfaces to ensure
+                                    data consistency across projects, production orders, and change requests.</li>
+                                <li>Implementing Power Automate flows to orchestrate notifications, approvals, PDF
+                                    generation, and automatic creation/updating of records between systems, reducing
+                                    manual work and error risks.</li>
+                                <li>Supporting migration and lifecycle management (environments, connections,
+                                    permissions, versioning) to keep solutions stable and documented.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>Power Apps</span>
+                                <span>Power Automate</span>
+                                <span>SharePoint Online</span>
+                                <span>Low-Code</span>
+                                <span>Factory Ops</span>
+                                <span>Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project: Hospital Moinhos de Vento -->
+                    <div class="timeline-item project-item">
+                        <div class="timeline-marker sub-marker"></div>
+                        <div class="timeline-content card">
+                            <h4>
+                                <a href="https://www.hospitalmoinhos.org.br/institucional" target="_blank"
+                                    class="project-title-link">
+                                    Hospital Moinhos de Vento – Website Redesign (Contractor) <i
+                                        class="fas fa-external-link-alt"></i>
+                                </a>
+                            </h4>
+                            <p class="project-summary">Complete redesign of the institutional website for desktop and
+                                mobile, ensuring alignment with Figma and brand identity while improving responsiveness
+                                and accessibility. Included new features for surgical booking and patient services.</p>
+                            <ul class="achievements">
+                                <li>Developed full responsive layouts including hero search, highlights with filters,
+                                    specialties, and complex navigation menus, matching high-fidelity Figma designs.
+                                </li>
+                                <li>Implemented new surgical appointment forms with field validation, loading states,
+                                    success/error feedback, and direct API integration for secure submission.</li>
+                                <li>Evolved REST API endpoints for CMS consumption, adding pagination, filters, content
+                                    normalization, and localization fixes (e.g., `LocalizedContent.pt`).</li>
+                                <li>Refined UX/UI with standardized typography, grid systems, and adherence to
+                                    accessibility best practices (ARIA) and responsive behavior.</li>
+                                <li>Maintained API stability and observability through environment updates and rigorous
+                                    testing.</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span>Angular</span>
+                                <span>TypeScript</span>
+                                <span>RxJS</span>
+                                <span>Node.js / Express</span>
+                                <span>SCSS</span>
+                                <span>Headless CMS</span>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="experience" class="section">
+        <section id="skills" class="section">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Systems Analyst</h3>
-                            <div class="company">
-                                <span class="company-name">Tata Consultancy Services</span>
-                                <span class="location">Curitiba, PR, Brazil</span>
-                                <span class="period">August 2021 – Present</span>
-                            </div>
-                            <ul class="responsibilities">
-                                <li>Developed web solutions for clients including Roche and Johnson & Johnson, focusing on pharmaceutical industry applications using JavaScript, Python, D3.js, Datastory, and Drupal.</li>
-                                <li>Built and maintained enterprise dashboards, single-page applications, and cross-platform interfaces.</li>
-                                <li>Automated processes with Python, creating RPA bots and ETL pipelines using pandas/NumPy.</li>
-                                <li>Integrated AI/ML APIs (OpenAI, Azure AI, TensorFlow) for intelligent application features.</li>
-                                <li>Developed low-code solutions with OutSystems, Mendix, and Power Apps for rapid delivery.</li>
-                                <li>Customized SharePoint with SPFx and automated workflows using Nintex and SAP integrations.</li>
-                                <li>Managed CI/CD pipelines with Git, Jenkins, Azure DevOps, and Docker.</li>
-                                <li>Administered AWS, Azure, and web servers (Apache, Nginx, Tomcat) with a focus on performance and security.</li>
-                            </ul>
-                        </div>
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-code skill-icon"></i>
+                        <h3>Front-End</h3>
+                        <p>Angular, React, React Native, JavaScript, TypeScript, HTML5, CSS3, SASS, Bootstrap, Material
+                            UI</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-server skill-icon"></i>
+                        <h3>Back-End</h3>
+                        <p>Python (RPA, ETL, pandas/NumPy), PHP (Laravel, Symfony, Drupal), C++, MySQL, SQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-brain skill-icon"></i>
+                        <h3>AI & Integration</h3>
+                        <p>OpenAI, Azure AI, TensorFlow APIs, SAP Integrations (REST, RFC), Google Apps Script</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-cubes skill-icon"></i>
+                        <h3>Low-Code & Automation</h3>
+                        <p>OutSystems, Power Apps, Power Automate, SharePoint Online, Nintex</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-terminal skill-icon"></i>
+                        <h3>DevOps & Infra</h3>
+                        <p>Git, Jenkins, Azure DevOps, Docker, AWS, Azure, Linux/Bash, Apache, Nginx</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-users skill-icon"></i>
+                        <h3>Soft Skills & Languages</h3>
+                        <p>Agile/Scrum, Leadership, Mentoring. Languages: English, Portuguese, Spanish.</p>
                     </div>
                 </div>
             </div>
@@ -74,72 +349,25 @@
         <section id="education" class="section">
             <div class="container">
                 <h2 class="section-title">Education</h2>
-                <div class="education-item">
-                    <h3>Bachelor's in Computer Science</h3>
-                    <div class="institution">
-                        <span class="institution-name">Universidade Estácio de Sá</span>
-                        <span class="location">Curitiba, PR, Brazil</span>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="edu-content">
+                            <h3>Bachelor's in Computer Science</h3>
+                            <span class="institution">Universidade Estácio de Sá</span>
+                            <span class="location">Curitiba, PR, Brazil | 2020 – 2022</span>
+                            <p>Focus: Systems development, Software Engineering, Cybersecurity, Computer Architecture,
+                                and Algorithms (C++, Python).</p>
+                        </div>
                     </div>
-                    <p>Studied systems development and programming fundamentals.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Front-End</h3>
-                        <ul>
-                            <li>Angular, React, React Native</li>
-                            <li>JavaScript, TypeScript</li>
-                            <li>HTML5, CSS3, SASS, Bootstrap, Material UI</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Back-End</h3>
-                        <ul>
-                            <li>Python (RPA, ETL, pandas/NumPy)</li>
-                            <li>PHP (Laravel, Symfony, Drupal, WordPress)</li>
-                            <li>C, C++</li>
-                            <li>MySQL, SQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>AI & Integration</h3>
-                        <ul>
-                            <li>OpenAI, Azure AI, TensorFlow APIs</li>
-                            <li>SAP (REST, RFC, IDoc)</li>
-                            <li>Google Apps Script</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Low-Code & Automation</h3>
-                        <ul>
-                            <li>OutSystems, Mendix</li>
-                            <li>Power Apps, Power Automate</li>
-                            <li>SharePoint Online, SPFx, Nintex</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>DevOps & Infrastructure</h3>
-                        <ul>
-                            <li>Git, Jenkins, Azure DevOps, Docker</li>
-                            <li>AWS, Azure, Acquia Cloud, Cloudflare</li>
-                            <li>Linux, Windows, macOS (Bash, PowerShell)</li>
-                            <li>Apache, Nginx, Tomcat</li>
-                            <li>SSL/TLS, New Relic, Pingdom</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Methods & Soft Skills</h3>
-                        <ul>
-                            <li>Agile, Scrum, Jira, Confluence</li>
-                            <li>Business analysis, stakeholder alignment</li>
-                            <li>Portuguese, English, Spanish</li>
-                            <li>Leadership, mentoring</li>
-                        </ul>
+                    <div class="education-card">
+                        <div class="edu-icon"><i class="fas fa-school"></i></div>
+                        <div class="edu-content">
+                            <h3>Technical High School in Informatics</h3>
+                            <span class="institution">Pontifícia Universidade Católica (PUC)</span>
+                            <span class="location">Curitiba, PR, Brazil | 2015 – 2019</span>
+                            <p>Learned bases of algorithms and software development.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,14 +376,22 @@
         <section id="recommendations" class="section">
             <div class="container">
                 <h2 class="section-title">Recommendations</h2>
-                <div class="recommendations-grid">
-                    <div class="recommendation">
-                        <p class="quote">Renan adapts easily to challenges, excelling in systems development and project management, optimizing team efficiency and project quality.</p>
-                        <p class="author">– Colleague</p>
+                <div class="recommendations-container">
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Renan adapts easily to challenges, highlighting himself in systems development and project
+                            management, optimizing team efficiency and project quality."</p>
+                        <div class="author-info">
+                            <strong>Colleague</strong>
+                        </div>
                     </div>
-                    <div class="recommendation">
-                        <p class="quote">His technical skills, proactiveness, and solution-focused approach make him a standout leader.</p>
-                        <p class="author">– Senior Business Analyst, TCS</p>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"His technical skills, proactiveness, and focus on solutions make him a standout leader."</p>
+                        <div class="author-info">
+                            <strong>Senior Business Analyst</strong>
+                            <span>TCS</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,10 +400,15 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Renan David Antunes Moreira. All rights reserved.</p>
+            <p>&copy; 2025 Renan David Antunes Moreira. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/renandavidantunesmoreira"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:pro.alfayank@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
