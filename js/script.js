@@ -12,64 +12,29 @@ sr.reveal('.timeline-item', { interval: 200 });
 sr.reveal('.skill-card', { interval: 100 });
 sr.reveal('.education-card', { interval: 200 });
 sr.reveal('.testimonial-card', { interval: 200 });
+sr.reveal('.bg-decor-item', {
+    delay: 300,
+    distance: '50px',
+    duration: 1500,
+    origin: 'bottom',
+    interval: 300
+});
 
 // Navbar Blur Effect on Scroll
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(15, 16, 20, 0.95)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(15, 16, 20, 0.85)';
+        navbar.classList.remove('scrolled');
     }
-});
-
-// Active Timeline Items on Scroll
-const observerOptions = {
-    threshold: 0,
-    rootMargin: "-45% 0px -45% 0px" // Creates a narrow activation band in the center
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        } else {
-            entry.target.classList.remove('active');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.timeline-item').forEach(item => {
-    observer.observe(item);
-});
-
-// Custom Navigation Scrolling
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-
-        if (targetId === '#experience') {
-            // Special case: Scroll to center the first timeline item
-            const firstItem = document.querySelector('.timeline-item.main-role');
-            if (firstItem) {
-                firstItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        } else {
-            // Default behavior with offset handled by CSS scroll-padding-top
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    });
 });
 
 // Profile Video Hover Effect
 const profileVideo = document.getElementById('profileVideo');
-
 if (profileVideo) {
     profileVideo.addEventListener('mouseenter', () => {
+        // Ensure video plays
         profileVideo.play();
     });
 
@@ -79,5 +44,60 @@ if (profileVideo) {
         profileVideo.currentTime = 0;
         // Restore poster (force reload/reset) if needed, but styling usually handles it
         profileVideo.load();
+    });
+}
+
+// Preloader
+const preloader = document.getElementById('preloader');
+if (preloader) {
+    window.addEventListener('load', () => {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    });
+}
+
+// Comic Bubbles Logic
+const bubbleContainer = document.getElementById('speech-bubbles');
+const profileContainer = document.querySelector('.profile-image-container');
+const messagePairs = [
+    ["Yes, I use AI.", "But it is just a tool."],
+    ["You should worry about people.", "People can ruin your life, machines won't."]
+];
+let pairIndex = 0;
+let timeout1, timeout2;
+
+if (profileContainer && bubbleContainer) {
+    profileContainer.addEventListener('mouseenter', () => {
+        // Step 1: Wait 2s before starting
+        timeout1 = setTimeout(() => {
+            const [msg1, msg2] = messagePairs[pairIndex];
+
+            // Show first bubble
+            bubbleContainer.innerHTML = `
+                <div class="speech-bubble bubble-top-right">${msg1}</div>
+            `;
+
+            // Step 2: Wait another 1.5s for second bubble
+            timeout2 = setTimeout(() => {
+                // Show second bubble alongside first (append)
+                const bubble2 = document.createElement('div');
+                bubble2.className = 'speech-bubble bubble-bottom-left';
+                bubble2.textContent = msg2;
+                bubbleContainer.appendChild(bubble2);
+
+                // Advance index only after full sequence
+                pairIndex = (pairIndex + 1) % messagePairs.length;
+            }, 1500);
+
+        }, 2000);
+    });
+
+    profileContainer.addEventListener('mouseleave', () => {
+        clearTimeout(timeout1);
+        clearTimeout(timeout2);
+        bubbleContainer.innerHTML = ''; // Hide bubbles immediately
     });
 }
